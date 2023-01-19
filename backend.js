@@ -35,7 +35,7 @@ app.post('/', (req, res) => {
 app.post('/service', async (req, res) => {
 	//can only use service if logged in
 
-	let username = "bigblase";
+	let username = req.body.email;
 
 	let firstTime = Number(await (redis.get("firstTime" + username)));
 	let canUse = true;
